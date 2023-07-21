@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <h1>{{ title }}</h1>
+    <div class="col-4">
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="name" />
+      </div>
+    </div>
+    <div class="col-1">
+      <button (click)="save()" class="btn btn-primary">save</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 m-4">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let item of savearray; let i = index"
+        >
+          {{ item }}
+          <div class="float-end">
+            <a href="#" (click)="edit(i)"
+              ><i class="bi bi-pencil-fill mx-3"></i
+            ></a>
+            <a href="#" (click)="delete(i)"
+              ><i class="bi bi-trash-fill text-danger"></i></a
+            >&nbsp;
+            <a href="#" (click)="complete(i)"
+              ><i class="bi bi-check-circle-fill text-success"></i
+            ></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6 m-4">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let item of completedarray; let i = index"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
